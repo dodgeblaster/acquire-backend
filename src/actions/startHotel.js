@@ -36,6 +36,29 @@ module.exports = (state, hotel) => {
 
     return {
         ...newState,
+
+        // decrease stock from hotel
+        hotels: {
+            ...newState.hotels,
+            [hotel.toLowerCase()]: {
+                ...newState.hotels[hotel.toLowerCase()],
+                availableStock:
+                    newState.hotels[hotel.toLowerCase()].availableStock - 1
+            }
+        },
+
+        // add stock to active player
+        players: {
+            ...newState.players,
+            [newState.activePlayer]: {
+                ...newState.players[newState.activePlayer],
+                stocks: [
+                    ...newState.players[newState.activePlayer].stocks,
+                    hotel
+                ]
+            }
+        },
+
         turnState: {
             stage: 'BUY_STOCK',
             mergeList: [],

@@ -50,4 +50,11 @@ describe('startHotel', () => {
         expect(x.turnState.stage).toBe('BUY_STOCK')
         expect(x.turnState.pendingTile).toBe(false)
     })
+
+    test('will give 1 stock to the player starting the hotel', () => {
+        const state = mockState
+        const x = startHotel(state, 'Continental')
+        expect(x.hotels.continental.availableStock).toBe(20)
+        expect(x.players.one.stocks.length).toBe(4)
+    })
 })
