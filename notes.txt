@@ -1,0 +1,64 @@
+create game
+
+startPlacingTile
+{
+    turnState: {
+        stage: PLACING_TILE
+        mergeList: []
+        mergeCompleted: []
+    }
+}
+
+
+chooseHotel
+{
+    turnState: {
+        stage: CHOOSE_HOTEL
+        mergeList: []
+        mergeCompleted: []
+    }
+}
+
+dealWithMerge (2-1, sell, keep)
+{
+    turnState: {
+        stage: DEAL_WITH_MERGE
+        mergeList: []
+        mergeCompleted: []
+    }
+}
+
+
+buyStock
+{
+    turnState: {
+        stage: BUY_STOCK
+        mergeList: []
+        mergeCompleted: []
+    }
+}
+
+chooseTile
+{
+    turnState: {
+        stage: CHOOSE_TILE
+        mergeList: []
+        mergeCompleted: []
+    }
+}
+
+
+endGame
+{
+    turnState: {
+        stage: END_GAME
+        mergeList: []
+        mergeCompleted: []
+    }
+}
+
+
+
+-- - -  
+
+
